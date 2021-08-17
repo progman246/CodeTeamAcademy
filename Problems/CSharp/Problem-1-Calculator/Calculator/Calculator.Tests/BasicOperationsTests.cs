@@ -72,7 +72,7 @@ namespace Calculator.Tests
         {
             MyCalculator calculator = new MyCalculator();
 
-            long actual = calculator.Multiply(222M, 12000000000);
+            long actual = calculator.Multiply(222L, 12000000000);
 
             var expected = 2664000000000;
 
@@ -94,14 +94,14 @@ namespace Calculator.Tests
         }
 
         [TestMethod]
-        public void DivideIntegers()
+        public void DivideLongs()
         {
             MyCalculator calculator = new MyCalculator();
 
-            (long quotient, long remainder) = calculator.Divide(10000000002, 4);
+            (long quotient, long remainder) = calculator.Divide(10000000002L, 4L);
 
-            var expectedQuotient = 2500000000;
-            var expectedRemainder = 2;
+            var expectedQuotient = 2500000000L;
+            var expectedRemainder = 2L;
 
             Assert.AreEqual(expectedQuotient, quotient);
             Assert.AreEqual(expectedRemainder, remainder);
@@ -124,7 +124,7 @@ namespace Calculator.Tests
         {
             MyCalculator calculator = new MyCalculator();
 
-            double actual = calculator.Add(300D, 200D);
+            double actual = calculator.Subtract(300D, 200D);
 
             var expected = 100D;
 
@@ -136,9 +136,9 @@ namespace Calculator.Tests
         {
             MyCalculator calculator = new MyCalculator();
 
-            long actual = calculator.Add(1000M, 1020M);
+            long actual = calculator.Subtract(1000L, 1020L);
 
-            var expected = -20M;
+            var expected = -20L;
 
             Assert.AreEqual(expected, actual);
         }
